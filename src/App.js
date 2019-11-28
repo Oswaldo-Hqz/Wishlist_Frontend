@@ -7,6 +7,8 @@ import Navigation from './components/Navigation';
 import WishList from './components/WishList';
 import CreateWishlist from './components/CreateWishlist';
 import CreateUser from './components/CreateUser';
+import Register from './components/auth/Register';
+import Login from './components/auth/Login';
 
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
         <Route path="/edit/:id" component={CreateWishlist} />
         <Route path="/create" component={CreateWishlist} />
         <Route path="/user" component={CreateUser} />
+        <Route exact path="/register" component={Register} />
+        <Route exact path="/login" component={Login} />
       </div>
 
     </Router>
