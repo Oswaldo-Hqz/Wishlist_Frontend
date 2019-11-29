@@ -69,25 +69,25 @@ class Register extends Component {
                         <form noValidate onSubmit={this.onSubmit}>
                             <div className="form-group col-sm-12">
                                 <label htmlFor="name">Nombre</label>
-                                <input className={classnames("form-control", { invalid: errors.name })}
+                                <input className={classnames("form-control", { "is-invalid": errors.name })}
                                 onChange={this.onChange} value={this.state.name} error={errors.name} id="name" type="text" />
                                 <span className="invalid-feedback">{errors.name}</span>
                             </div>
                             <div className="form-group col-sm-12">
                                 <label htmlFor="email">Email</label>
-                                <input className={classnames("form-control", { invalid: errors.email })}
+                                <input className={classnames("form-control", { "is-invalid": errors.email })}
                                 onChange={this.onChange} value={this.state.email} error={errors.email} id="email" type="email" />
                                 <span className="invalid-feedback">{errors.email}</span>
                             </div>
                             <div className="form-group col-sm-12">
                                 <label htmlFor="password">Password</label>
-                                <input className={classnames("form-control", { invalid: errors.password })}
+                                <input className={classnames("form-control", { "is-invalid": errors.password })}
                                 onChange={this.onChange} value={this.state.password} error={errors.password} id="password" type="password" />
                                 <span className="invalid-feedback">{errors.password}</span>
                             </div>
                             <div className="form-group col-sm-12">
                                 <label htmlFor="password2">Confirmar Password</label>
-                                <input className={classnames("form-control", { invalid: errors.confirmPass })}
+                                <input className={classnames("form-control", { "is-invalid": errors.confirmPass })}
                                 onChange={this.onChange} value={this.state.password2} error={errors.password2} id="password2" type="password" />
                                 <span className="invalid-feedback">{errors.confirmPass}</span>
                             </div>

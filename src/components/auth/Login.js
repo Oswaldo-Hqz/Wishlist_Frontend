@@ -71,15 +71,15 @@ class Login extends Component {
                         <form noValidate onSubmit={this.onSubmit}>
                             <div className="form-group col-sm-12">
                                 <label htmlFor="email">Email</label>
-                                <input className={classnames("form-control", { invalid: errors.email || errors.emailnotfound })}
+                                <input className={classnames("form-control", { "is-invalid": errors.email || errors.emailnotfound })}
                                 onChange={this.onChange} value={this.state.email} error={errors.email} id="email" type="email" />
                                 <span className="invalid-feedback">{errors.email}{errors.emailnotfound}</span>
                             </div>
                             <div className="form-group col-sm-12">
                                 <label htmlFor="password">Password</label>
-                                <input className={classnames("form-control", { invalid: errors.password || errors.passwordincorrect })}
+                                <input className={classnames("form-control", { "is-invalid": errors.password || errors.passwordincorrect })}
                                 onChange={this.onChange} value={this.state.password} error={errors.password} id="password" type="password" />
-                                <span className="red-text"> {errors.password} {errors.passwordincorrect} </span>
+                                <div className="invalid-feedback"> {errors.password} {errors.passwordincorrect} </div>
                             </div>
                             <div className="col-sm-12" style={{ paddingLeft: "11.250px" }}>
                                 <button style={{ width: "150px", borderRadius: "3px", letterSpacing: "1.5px", marginTop: "1rem" }}
