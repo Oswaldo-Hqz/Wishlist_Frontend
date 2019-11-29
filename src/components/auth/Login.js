@@ -33,26 +33,26 @@ export default class Login extends Component {
                 <div className="row" style={{ marginTop: "4rem" }}>
                     <div className="col-sm-8 offset-sm-2">
                         <Link to="/" className="btn btn-secondary">
-                            <i className="material-icons left">keyboard_backspace</i> Back to home
+                            Back to home
                         </Link>
-                        <div className="col-sm-12" style={{ paddingLeft: "11.250px" }}>
-                            <h4><b>Login</b> below</h4>
+                        <div className="col-sm-12 mt-3" style={{ paddingLeft: "11.250px" }}>
+                            <h4><b>Login</b></h4>
                             <p className="btn btn-link">
                                 Don't have an account? <Link to="/register">Register</Link>
                             </p>
                         </div>
                         <form noValidate onSubmit={this.onSubmit}>
-                            <div className="input-group col-sm-12">
-                                <input onChange={this.onChange} value={this.state.email} error={errors.email} id="email" type="email" />
+                            <div className="form-group col-sm-12">
                                 <label htmlFor="email">Email</label>
+                                <input className="form-control" onChange={this.onChange} value={this.state.email} error={errors.email} id="email" type="email" />
                             </div>
-                            <div className="input-group col-sm-12">
-                                <input onChange={this.onChange} value={this.state.password} error={errors.password} id="password" type="password" />
+                            <div className="form-group col-sm-12">
                                 <label htmlFor="password">Password</label>
+                                <input className="form-control" onChange={this.onChange} value={this.state.password} error={errors.password} id="password" type="password" />
                             </div>
                             <div className="col-sm-12" style={{ paddingLeft: "11.250px" }}>
                                 <button style={{ width: "150px", borderRadius: "3px", letterSpacing: "1.5px", marginTop: "1rem" }}
-                                    type="submit" className="btn btn-light"
+                                    type="submit" className="btn btn-primary"
                                 > Login </button>
                             </div>
                         </form>

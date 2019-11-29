@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 import Navigation from './components/Navigation';
+import Landing from './components/Landing'
 import WishList from './components/WishList';
 import CreateWishlist from './components/CreateWishlist';
 import CreateUser from './components/CreateUser';
@@ -17,6 +18,7 @@ function App() {
       <Navigation/>
 
       <div className="container p-4">
+        <Route exact path="/" component={Landing} />
         <Route path="/" component={WishList} exact />
         <Route path="/edit/:id" component={CreateWishlist} />
         <Route path="/create" component={CreateWishlist} />
