@@ -42,7 +42,8 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        <Navigation/>
+        {/* <Navigation/> */}
+        <Route exact component={Navigation} />
 
         <div className="container p-4">
           <Route exact path="/" component={Landing} />
@@ -52,9 +53,10 @@ function App() {
           <Route path="/user" component={CreateUser} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
+          
           <Switch>
-              <PrivateRoute exact path="/dashboard" component={Dashboard} />
-            </Switch>
+            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          </Switch>
         </div>
 
       </Router>

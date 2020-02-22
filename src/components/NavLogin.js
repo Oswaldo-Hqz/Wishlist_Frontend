@@ -2,33 +2,9 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { registerUser } from "../actions/authActions";
+import { logoutUser } from "../actions/authActions";
 
-
-export default class Navigation extends Component {
-
-    componentDidMount() {
-        // If logged in and user navigates to Register page, should redirect them to dashboard
-        console.log(this.props.auth);
-        // if (this.props.auth.isAuthenticated) {
-            
-        // }
-    }
-
-    componentWillReceiveProps(nextProps) {
-        console.log(nextProps);
-        
-        // if (nextProps.auth.isAuthenticated) {
-        //     this.props.history.push("/dashboard"); // push user to dashboard when they login
-        // }
-
-        // if (nextProps.errors) {
-        //     this.setState({
-        //         errors: nextProps.errors
-        //     });
-        // }
-    };
-
+class NavLogin extends Component {
     render() {
         return (
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -42,7 +18,7 @@ export default class Navigation extends Component {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav ml-auto">
                             <li className="nav-item active">
-                                <Link className="nav-link" to="/" >Wishlist</Link>
+                                <Link className="nav-link" to="/dashboard" >Dashboard</Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/create" >Crear wishlist</Link>
@@ -57,3 +33,15 @@ export default class Navigation extends Component {
         )
     }
 }
+
+NavLogin.propTypes = {
+    logoutUser: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired
+};
+const mapStateToProps = state => ({
+    auth: state.auth
+});
+export default connect(
+    mapStateToProps,
+    { logoutUser }
+)(NavLogin);
